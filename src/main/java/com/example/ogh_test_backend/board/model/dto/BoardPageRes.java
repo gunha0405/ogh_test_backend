@@ -23,7 +23,7 @@ public class BoardPageRes {
     private boolean hasPrevious;
 
     private List<BoardReadDto.BoardReadRes> boardList;
-    public static BoardPageRes from(Page<Board> boardPage) {
+    public static BoardPageRes fromEntity(Page<Board> boardPage) {
         return BoardPageRes.builder()
                 .page(boardPage.getNumber())
                 .size(boardPage.getSize())
