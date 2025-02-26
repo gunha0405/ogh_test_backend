@@ -10,7 +10,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
-@Schema(description = "게시판 정보를 담는 객체")
+@Schema(description = "게시글 정보를 담는 객체")
 @Entity
 @Getter
 @NoArgsConstructor
