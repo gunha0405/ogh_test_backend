@@ -1,0 +1,28 @@
+# IntelliJ IDEA / VS Code 설정 폴더 제외
+.idea/
+.vscode/
+
+# Gradle 관련 빌드 파일 제외
+build/
+.gradle/
+out/
+
+# 실행 파일 제외
+gradlew
+gradlew.bat
+
+
+# OS 관련 파일 제외 (Mac, Windows)
+.DS_Store
+Thumbs.db
+
+# 로그 파일 제외
+*.log
+
+# JAR, WAR, ZIP 파일 제외
+*.jar
+*.war
+*.zip
+
+# Class 파일 제외
+*.class
