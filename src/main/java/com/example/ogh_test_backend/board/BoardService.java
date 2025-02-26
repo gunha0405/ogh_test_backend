@@ -31,6 +31,6 @@ public class BoardService {
 
     public BoardPageRes list(int page, int size) {
         Page<Board> boardList = boardRepository.findAll(PageRequest.of(page, size));
-        return BoardPageRes.from(boardList);
+        return BoardPageRes.fromEntity(boardList);
     }
 }
