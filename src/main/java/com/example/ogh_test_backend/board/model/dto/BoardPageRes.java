@@ -22,7 +22,8 @@ public class BoardPageRes {
     private boolean hasNext;
     private boolean hasPrevious;
 
-    private List<BoardReadDto.BoardReadRes> boardList;
+    private List<BoardListRes> boardList;
+
     public static BoardPageRes fromEntity(Page<Board> boardPage) {
         return BoardPageRes.builder()
                 .page(boardPage.getNumber())
@@ -31,7 +32,9 @@ public class BoardPageRes {
                 .totalPages(boardPage.getTotalPages())
                 .hasNext(boardPage.hasNext())
                 .hasPrevious(boardPage.hasPrevious())
-                .boardList(boardPage.stream().map(BoardReadDto.BoardReadRes::fromEntity).collect(Collectors.toList()))
+                .boardList(boardPage.stream()
+                        .map(BoardListRes::fromEntity)
+                        .collect(Collectors.toList()))
                 .build();
     }
 }
