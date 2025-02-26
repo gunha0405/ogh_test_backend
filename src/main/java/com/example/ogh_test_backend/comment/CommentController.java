@@ -14,8 +14,8 @@ public class CommentController {
     private final CommentService commentService;
 
     @Operation(
-            summary = "게시글 상세보기",
-            description = "주어진 ID에 해당하는 게시글을 조회 합니다.",
+            summary = "댓글 작성하기",
+            description = "주어진 정보에 해당하는 댓글을 작성합니다.",
             responses = {
                     @ApiResponse(responseCode = "200", description = "조회 성공"),
                     @ApiResponse(responseCode = "404", description = "댓글 작성 실패")
