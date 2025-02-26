@@ -1,5 +1,6 @@
 package com.example.ogh_test_backend.board;
 
+import com.example.ogh_test_backend.board.model.dto.BoardPageRes;
 import com.example.ogh_test_backend.board.model.dto.BoardReadDto;
 import com.example.ogh_test_backend.board.model.dto.BoardRegisterDto;
 import io.swagger.v3.oas.annotations.Operation;
@@ -39,6 +40,20 @@ public class BoardController {
     @GetMapping("/read/{boardIdx}")
     public ResponseEntity<BoardReadDto.BoardReadRes> read(@PathVariable Long boardIdx) {
         BoardReadDto.BoardReadRes response = boardService.read(boardIdx);
+        return ResponseEntity.ok(response);
+    }
+
+    @Operation(
+            summary = "게시글 리스트",
+            description = "파라미터로 받은 page와 size에 따른 게시글 리스트를 보여줍니다.",
+            responses = {
+                    @ApiResponse(responseCode = "200", description = "조회 성공"),
+                    @ApiResponse(responseCode = "404", description = "게시글 리스트 찾을 수 없음")
+            }
+    )
+    @GetMapping("/list")
+    public ResponseEntity<BoardPageRes> list(int page, int size) {
+        BoardPageRes response = boardService.list(page, size);
         return ResponseEntity.ok(response);
     }
 }

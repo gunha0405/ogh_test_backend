@@ -14,7 +14,7 @@ public class BoardReadDto {
         private String content;
         private String writer;
 
-        public static BoardReadRes fromBoard(Board board){
+        public static BoardReadRes fromEntity(Board board){
             return BoardReadRes.builder().title(board.getTitle()).content(board.getContent()).writer(board.getWriter()).build();
         }
     }
